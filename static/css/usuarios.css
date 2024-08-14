@@ -1,0 +1,262 @@
+* { 
+    text-decoration: none;
+    list-style: none;
+}
+
+/*cabecera logo y fotter*/
+
+.menu {
+    position:relative ;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #323232;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color: #02b1f4;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #808080;
+    text-transform: uppercase;
+}
+
+#menu {
+    display: none; 
+ }
+ 
+ .menu-icono {
+     width: 25px;
+ }
+ 
+ .menu label {
+     cursor: pointer;
+     display: none;
+ }
+
+ 
+.footer {
+    padding: 50px;
+    background-color: #fafafa;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link ul {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link ul li {
+    margin-right: 50px;
+}
+
+.link ul li a {
+    color: #323232;
+    font-size: 17px;
+} 
+
+.link ul li a:hover {
+    color: #02b1f4;
+}
+
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+a.btn-2 {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a.btn-2:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de los productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.producto p {
+    color: #555;
+}
+
+.producto .precio {
+    font-size: 1.2em;
+    color: #28a745;
+    margin: 10px 0;
+}
+
+.producto .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.producto .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del carrito de compras */
+.carrito {
+    margin-top: 30px;
+}
+
+.carrito table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrito table th, .carrito table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.carrito table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.carrito table td {
+    color: #333;
+}
+
+.carrito .total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #28a745;
+}
+
+.btn-compra {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-compra:hover {
+    background-color: #218838;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Estilo responsive para móviles */
+@media (max-width: 768px) {
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto {
+        max-width: 90%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .btn-compra {
+        padding: 10px;
+    }
+}

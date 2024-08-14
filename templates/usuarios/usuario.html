@@ -1,0 +1,135 @@
+{% include 'usuarios/cabecera.html' %}
+
+<body>
+    <div class="container">
+        <h1>Bienvenido Usuario</h1>
+        <a href="{{ url_for('home') }}" class="btn-2">Cerrar sesión</a>
+
+        <hr>
+
+        <h2>Nuestros Productos</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen3.jpg') }}" alt="Producto 1">
+                <h3>Perchero</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, accusantium. Dolor architecto aut ipsa nihil dignissimos, impedit delectus earum eveniet consectetur blanditiis soluta dolores labore minus quia deserunt recusandae. Quos?</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 1', 10)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen4.jpg') }}" alt="Producto 2">
+                <h3>Silla exterior</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit praesentium eligendi qui atque quisquam. Aperiam, quibusdam. Accusamus molestias iusto rerum. Amet ipsa atque ducimus velit! Vitae eaque consequuntur officia ea.</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen5.jpg') }}" alt="Producto 3">
+                <h3>Mesa de centro</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quo doloremque sapiente perferendis nostrum facilis placeat enim corporis eaque dolorem, exercitationem ducimus rerum quae perspiciatis! Odit voluptate placeat nam eveniet!</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen6.jpg') }}" alt="Producto 4">
+                <h3>Silla interior</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem eaque impedit corrupti eligendi magnam culpa libero ex esse repellendus nisi. Alias molestias dolorem sit deleniti ut autem, nemo sunt vitae.</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen7.jpg') }}" alt="Producto 5">
+                <h3>Vinajera</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus ab nostrum quasi cum a doloribus labore ipsa expedita, incidunt maiores quas esse voluptatem explicabo in, quo rerum voluptatum. Velit, eius!</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen8.jpg') }}" alt="Producto 6">
+                <h3>Lampara experior</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi odio animi, a aliquid ea accusamus illo nulla. Rem, possimus facere, impedit cupiditate veritatis aliquid quidem temporibus in, soluta doloribus eaque?</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen9.jpg') }}" alt="Producto 7">
+                <h3>Repisa</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum iure voluptate blanditiis esse laudantium, nobis inventore explicabo, minima quas quos, nemo magni id dolore? Nam quod quos repellat minima aspernatur.</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen10.jpg') }}" alt="Producto 8">
+                <h3>Soporte leña</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nesciunt quos non natus porro quaerat ipsam laborum distinctio facilis veniam voluptatum facere quia eveniet eligendi architecto, voluptates, excepturi amet quasi.</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="{{ url_for('static', filename='imagenes/imagen11.jpg') }}" alt="Producto 9">
+                <h3>Estanteria tipo industrial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id tenetur ipsum cupiditate corrupti nemo quis nulla dolore omnis sint numquam nobis iure minima quisquam, exercitationem esse pariatur doloribus voluptatibus doloremque!</p>
+                <p class="precio">COP$200.000</p>
+                <button class="btn" onclick="agregarAlCarrito('Producto 2', 15)">Agregar al Carrito</button>
+            </div>
+        
+        </div>
+
+        <hr>
+
+        <h2>Tu Carrito de Compras</h2>
+        <div class="carrito">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-items">
+                    <!-- Aquí se agregarán dinámicamente los productos del carrito -->
+                </tbody>
+            </table>
+
+            <div class="total">
+                <h3>Total: $<span id="total-carrito">0.00</span></h3>
+            </div>
+
+            <button class="btn btn-compra" onclick="realizarCompra()">Realizar Compra</button>
+        </div>
+    </div>
+
+    {% include 'usuarios/pie.html' %}
+
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            let productoExistente = carrito.find(producto => producto.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({ nombre: nombre, cantidad: 1, precio: precio });
+            }
+
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const carritoItems = document.getElementById('carrito-items');
+            carritoItems.innerHTML = '';
+
+            carrito.forEach((producto, index) => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>${producto.nombre}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>$${producto.precio.toFixed(2)}</td>
+                    <td>$${(producto.precio * producto.cantidad).toFixed(2)}</td>
+                    <td><button onclick="eliminarDelCarrito(${index})" class="btn btn-eliminar">Eliminar</button></td>
+    

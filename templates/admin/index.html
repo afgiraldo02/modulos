@@ -1,0 +1,41 @@
+{% include 'admin/cabecera.html' %}
+
+<body>
+    
+    <div class="container">
+        <h1>Bienvenido Administrador</h1>
+        <a href="{{ url_for('home') }}" class="btn-2">Cerrar sesión</a>
+
+        <hr>
+
+        <h2>Actualizar Catálogo de Productos</h2>
+
+        <!-- Formulario para agregar o actualizar un producto -->
+        <form action="/admin/update_product" method="POST">
+            <label for="product-id">ID del Producto:</label>
+            <input type="text" id="product-id" name="product_id" placeholder="Ingresa el ID del Producto" required>
+
+            <label for="product-name">Nombre del Producto:</label>
+            <input type="text" id="product-name" name="product_name" placeholder="Ingresa el Nombre del Producto" required>
+
+            <label for="product-description">Descripción del Producto:</label>
+            <textarea id="product-description" name="product_description" rows="5" placeholder="Ingresa la Descripción del Producto" required></textarea>
+
+            <label for="product-price">Precio del Producto:</label>
+            <input type="number" id="product-price" name="product_price" placeholder="Ingresa el Precio del Producto" required>
+
+            <input type="submit" value="Guardar Producto" class="btn">
+        </form>
+
+        <hr>
+
+        <!-- Formulario para eliminar un producto -->
+        <form action="/admin/delete_product" method="POST">
+            <label for="delete-product-id">Eliminar Producto (ID):</label>
+            <input type="text" id="delete-product-id" name="delete_product_id" placeholder="Ingresa el ID del Producto a Eliminar" required>
+            <input type="submit" value="Eliminar Producto" class="btn delete-button">
+        </form>
+    </div>
+</body>
+
+{% include 'admin/pie.html' %}

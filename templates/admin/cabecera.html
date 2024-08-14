@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTAGE PROJECT</title>
+    <!-- Enlace a la hoja de estilos CSS específica de la página -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+    <!-- Sección del encabezado -->
+    <header class="header">
+        <div class="menu container">
+            <!-- Logo del sitio -->
+            <a href="#" class="logo">VProject</a>
+            <!-- Checkbox para manejar el menú desplegable en móviles -->
+            <input type="checkbox" id="menu" /> 
+            <label for="menu">
+                <!-- Icono de menú para dispositivos móviles -->
+                <img src="{{ url_for('static', filename='imagenes/menu.png') }}" class="menu-icono" alt="menu">
+            </label>
+            <!-- Navegación principal del sitio -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-img">
+            <img src="{{ url_for('static', filename='imagenes/imagen_cabecera.png') }}" alt="">
+        </div>

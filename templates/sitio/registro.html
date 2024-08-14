@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metadatos y configuración de la página -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la visualización para que sea responsive en dispositivos móviles -->
+    <title>Registro - VINTAGE PROJECT</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+
+    <!-- Enlaces a archivos de estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Importa la librería de iconos Font Awesome para usar iconos en la página -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagina_inicio.css') }}"> <!-- Enlace al archivo CSS personalizado que define los estilos de la página -->
+</head>
+
+<body>
+
+<!-- Sección del formulario de registro -->
+<section class="formulario container">
+    <!-- Formulario para crear un nuevo registro de usuario -->
+    <form action="{{ url_for('crear_registro') }}" method="post" autocomplete="off">
+        <h2>REGISTRO</h2> <!-- Título del formulario -->
+        
+        <!-- Grupo de campos de entrada del formulario -->
+        <div class="input-group">
+            <!-- Campo de entrada para el correo electrónico -->
+            <div class="input-container">
+                <input type="email" name="txtCorreo" placeholder="Correo"> <!-- Entrada para el correo del usuario -->
+                <i class="fa-solid fa-envelope"></i> <!-- Icono de sobre para indicar que es un campo de correo -->
+            </div>
+
+            <!-- Campo de entrada para la contraseña -->
+            <div class="input-container">
+                <input type="password" name="txtPassword" placeholder="Contraseña"> <!-- Entrada para la contraseña del usuario -->
+                <i class="fa-solid fa-lock"></i> <!-- Icono de candado para indicar que es un campo de contraseña -->
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn-2">Registrar</button> <!-- Botón que envía los datos del formulario para registrar al usuario -->
+            <a href="{{ url_for('home') }}" class="btn-3">Cancelar</a> <!-- Enlace para cancelar el registro y volver a la página de inicio -->
+        </div>
+    </form>
+</section>
+
+</body>
+
+</html>
+
+
+
+
+
